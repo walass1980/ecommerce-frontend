@@ -3,9 +3,9 @@ import Link from "next/link"
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className="w-full flex items-center justify-between">
         {/* LEFT */}
-        <Link href="/" className="flex item-center">
+        <Link href="/" className="flex items-center">
          <Image 
          src="/logo.png" 
          alt="TrendLama" 
@@ -13,11 +13,12 @@ const Navbar = () => {
          height={36} 
          className="w-6 h-6 md:w-9"
          />
-         <p className="text-md font-medium">
+         <p className="text-md font-medium tracking-wider">
             TRENDWALASS
          </p>
         </Link>
         {/* RIGHT */}
+        <div className="">right</div>
     </nav>
   )
 }
