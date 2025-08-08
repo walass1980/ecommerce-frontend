@@ -3,9 +3,9 @@ export type ProductType ={
   name: string;
   shortDescription: string;
   price: number;
-  size: string[];
+  sizes: string[];
   colors: string[];
-  image: Record<string, string>;
+  images: Record<string, string>;
 };
 
 export type ProductsType = ProductType[];
