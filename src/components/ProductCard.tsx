@@ -37,7 +37,9 @@ const ProductCard = ({product}: {product: ProductType}) => {
             className="ring ring-gray-300 rounded-md px-2 py-1"
             >
               {product.sizes.map((size) => (
-                <option></option>
+                <option key={size} value={size}>
+                  {size.toUpperCase()}
+                </option>
               ))}
             </select>
         </div>
