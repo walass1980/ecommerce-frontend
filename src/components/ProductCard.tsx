@@ -43,6 +43,11 @@ const ProductCard = ({product}: {product: ProductType}) => {
               ))}
             </select>
         </div>
+        {/* COLORS */}
+        <div className="flex flex-col gap-1">
+          <span className="text-gray-500">Color</span>
+          
+        </div>
       </div>
     </div>
   )
