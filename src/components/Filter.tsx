@@ -1,5 +1,7 @@
+"use client"
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { useReducer } from "react"
+
 
 const Filter = () => {
     const searchParams = useSearchParams()
