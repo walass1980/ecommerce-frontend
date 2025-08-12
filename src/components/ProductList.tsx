@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Categories from "./Categories";
 import ProductCard from "./ProductCard";
 
@@ -113,7 +114,7 @@ const products = [
   },
 ];
 
-const ProductList = () => {
+const ProductList = ({category}: {category:string}) => {
   return (
     <div className='w-full'>
       <Categories/>
@@ -122,6 +123,12 @@ const ProductList = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+      <Link
+        href={category ? `/products/?category=${category}` : "/products"}
+        className=""
+      >
+        View all products
+      </Link>
     </div>
   )
 }
