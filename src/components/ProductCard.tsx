@@ -12,7 +12,7 @@ const ProductCard = ({product}: {product: ProductType}) => {
      color: product.colors[0]
   })
 
-  const { addToCart } = useCartStore()
+  // const { addToCart } = useCartStore()
 
   const handleProductType = ({
     type,
@@ -27,8 +27,13 @@ const ProductCard = ({product}: {product: ProductType}) => {
     }))
   }
 
-  const handleAddToCart () => {
-
+  const handleAddToCart = () => {
+    addToCart({
+      ...product,
+      quantity: 1,
+      selectedSize: productType.size,
+      selectedColor: productType.color,
+    })
   }
   
   return (
@@ -73,14 +78,17 @@ const ProductCard = ({product}: {product: ProductType}) => {
             {product.colors.map((color) => (
               <div
               className={`cursor-pointer border-1 ${
-                productType.color == color
+                productType.color === color
                 ? "border-gray-400"
                 : "border-gray-200"
               } rounded-full p-[1.2]`}
               key={color}
+              onClick={() =>
+                handleProductType({ type: "color", value: color })
+              }
               >
                 <div
-                 className="w-[14px] h-[14px] roiunded-full"
+                 className="w-[14px] h-[14px] rounded-full"
                  style={{ backgroundColor: color }}
                 />
               </div>
