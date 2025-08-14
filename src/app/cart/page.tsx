@@ -81,7 +81,7 @@ const CartPage = () => {
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const activeSearch = parseInt(searchParams.get("step" || "1"))
+  const activeSearch = parseInt(searchParams.get("step") || "1")
   return (
     <div className="flex flex-col gap-8 items-center justify-center mt-12">
       {/* TITLE */}
