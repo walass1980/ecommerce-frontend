@@ -96,7 +96,7 @@ const CartPage = () => {
            key={step.id}>
             <div 
              className={`w-6 h-6 rounded-full text-white p-4 flex items-center justify-center ${
-              step.id === activeStep ? "text-gray-800" :"text-gray-200"
+              step.id === activeStep ? "bg-gray-800" :"bg-gray-200"
              }`}
              >
               {step.id}
