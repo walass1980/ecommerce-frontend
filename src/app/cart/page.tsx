@@ -81,7 +81,7 @@ const CartPage = () => {
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const activeSearch = parseInt(searchParams.get("step") || "1")
+  const activeStep = parseInt(searchParams.get("step") || "1")
   return (
     <div className="flex flex-col gap-8 items-center justify-center mt-12">
       {/* TITLE */}
@@ -91,10 +91,16 @@ const CartPage = () => {
         {steps.map(step => (
           <div 
            className={`flex items-center gap-2 border-b-2 pb-2 ${
-            step.id === activeSearch ? "border-gray-800" : "border-gray-200"
+            step.id === activeStep ? "border-gray-800" : "border-gray-200"
            }`} 
            key={step.id}>
-            <div className="">{step.id}</div>
+            <div 
+             className={`w-6 h-6 rounded-full text-white p-4 flex items-center justify-center ${
+              step.id === activeStep ? "text-gray-800" :"text-gray-200"
+             }`}
+             >
+              {step.id}
+            </div>
             <p>{step.title}</p>
           </div>
         ))}
