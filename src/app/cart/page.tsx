@@ -1,6 +1,7 @@
 "use client"
 
 import { CartsItemType } from "@/types";
+import { ArrowRight } from "lucide-react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 
@@ -110,6 +111,20 @@ const CartPage = () => {
             </p>
           </div>
         ))}
+      </div>
+      {/* STEPS & DETAILS */}
+      <div className="w-full flex flex-row gap-16">
+        {/* STEPS */}
+        <div className="w-full lg:w-7/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8">1</div>
+        {/* DETAILS */}
+        <div className="w-full lg:w-5/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8">
+         <h2 className="font-semibold">Cart Details</h2>
+         <div className="flex flex-col justify-between"></div>
+         <button className="w-full bg-gray-700 hover:bg-gray-900 transition-all duration-300 text-white p-2 rounded-lg cursor-pointer flex items-center justify-center gap-2">
+          Continue
+          <ArrowRight className="w-3 h-3"/>
+         </button>
+        </div>
       </div>
     </div>
   )
