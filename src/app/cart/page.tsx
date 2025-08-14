@@ -77,7 +77,10 @@ const steps = [
 
 const CartPage = () => {
   return (
-    <div>CartPage</div>
+    <div className="flex flex-col gap-8 items-center justify-center mt-12">
+      {/* TITLE */}
+      <h1 className="text-2xl font-medium">You Shopping Cart</h1>
+    </div>
   )
 }
 

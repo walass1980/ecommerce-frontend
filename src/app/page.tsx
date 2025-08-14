@@ -18,4 +18,4 @@ const Homepage = async ({
   )
 }
 
-export default Homepage 
+export default Homepage
