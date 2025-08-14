@@ -1,6 +1,8 @@
 "use client"
 
 import { CartsItemType } from "@/types";
+import { useSearchParams, useRouter } from "next/navigation";
+
 
 
 const steps = [
@@ -76,10 +78,23 @@ const steps = [
  ];
 
 const CartPage = () => {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
+  const activeSearch = parseInt(searchParams.get("step" || "1"))
   return (
     <div className="flex flex-col gap-8 items-center justify-center mt-12">
       {/* TITLE */}
       <h1 className="text-2xl font-medium">You Shopping Cart</h1>
+      {/* STEPS */}
+      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+        {steps.map(step => (
+          <div className="" key={step.id}>
+            <div className="">{step.id}</div>
+            <p>{step.title}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
