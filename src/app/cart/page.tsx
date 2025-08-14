@@ -101,7 +101,13 @@ const CartPage = () => {
              >
               {step.id}
             </div>
-            <p>{step.title}</p>
+            <p 
+             className={`text-sm font-medium ${
+              step.id === activeStep ? "text-gray-800" : "text-gray-200"
+             }`}
+             >
+              {step.title}
+            </p>
           </div>
         ))}
       </div>
