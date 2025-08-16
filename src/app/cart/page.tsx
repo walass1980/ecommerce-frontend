@@ -138,12 +138,22 @@ const CartPage = () => {
             <p className="text-gray-500">Shipping Fee</p>
             <p className="font-medium">$ 10</p>
           </div>
-          <div className="flex justify-between text-sm">
-            <p className="text-gray-500">Total</p>
-            <p className="font-medium">$ 10</p>
+          <hr className="border-gray-200"/>
+          <div className="flex justify-between">
+            <p className="text-gray-500 font-semibold">Total</p>
+            <p className="font-medium">
+            $
+              {cartItems.reduce(
+                (acc, item) => acc + item.price * item.quantity,
+                0
+              ).toFixed(2)}
+            </p>
           </div>
          </div>
-         <button className="w-full bg-gray-700 hover:bg-gray-900 transition-all duration-300 text-white p-2 rounded-lg cursor-pointer flex items-center justify-center gap-2">
+         <button 
+          onClick={() => router.push("/cart?step2", { scroll: false })}
+          className="w-full bg-gray-700 hover:bg-gray-900 transition-all duration-300 text-white p-2 rounded-lg cursor-pointer flex items-center justify-center gap-2"
+         >
           Continue
           <ArrowRight className="w-3 h-3"/>
          </button>
