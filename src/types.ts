@@ -1,3 +1,5 @@
+import z from "zod";
+
 export type ProductType ={
   id: string | number;
   name: string;
@@ -18,6 +20,10 @@ export type CartItemType = ProductType & {
 }
 
 export type CartsItemType = CartItemType[]
+
+export const shippingFormSchema = z.object({
+  name: z.string().min(1, "Name is required")
+})
 
 export type CartStoreStateType = {
   cart: CartsItemType;
