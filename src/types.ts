@@ -22,7 +22,8 @@ export type CartItemType = ProductType & {
 export type CartsItemType = CartItemType[]
 
 export const shippingFormSchema = z.object({
-  name: z.string().min(1, "Name is required")
+  name: z.string().min(1, "Name is required!"),
+  email: z.email().min(1, "Email is required!"),
 })
 
 export type CartStoreStateType = {
