@@ -47,7 +47,10 @@ export const PaymentFormSchema = z.object({
       /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
       "Expiration date must be in MM/YY format!"
     ),
+    cvv: z.string().min(3, "CVV is required!").max(3, "CVV is required!"),
 })
+
+export type PaymentFormInputs = z.infer<typeof PaymentFormSchema>
 
 export type CartStoreStateType = {
   cart: CartsItemType;
