@@ -115,7 +115,11 @@ const CartPage = () => {
       {/* STEPS & DETAILS */}
       <div className="w-full flex flex-row gap-16">
         {/* STEPS */}
-        <div className="w-full lg:w-7/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8">1</div>
+        <div className="w-full lg:w-7/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8">
+         {activeStep === 1 ? (
+          
+         )}
+        </div>
         {/* DETAILS */}
         <div className="w-full lg:w-5/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8">
          <h2 className="font-semibold">Cart Details</h2>

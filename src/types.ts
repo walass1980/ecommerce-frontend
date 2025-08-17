@@ -18,3 +18,9 @@ export type CartItemType = ProductType & {
 }
 
 export type CartsItemType = CartItemType[]
+
+export type CartStoreStateType = {
+  cart: CartsItemType;
+  hasHydreted: boolean;
+}
+
