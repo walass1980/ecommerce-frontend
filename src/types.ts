@@ -33,6 +33,22 @@ export const shippingFormSchema = z.object({
   city: z.string().min(1, "City is required!"),
 })
 
+export type ShippingFormInputs = z.infer<typeof shippingFormSchema>
+
+export const PaymentFormSchema = z.object({
+  cartHolder: z.string().min(1, "Card is required!"),
+  cardNumber: z
+    .string()
+    .min(16, "Card number is required!")
+    .max(16, "Card number is required!"),
+  expirationDate: z
+    .string()
+    .regex(
+      /^(0[1-9]|1[0-2])\/?([0-9]{2})$/,
+      "Expiration date must be in MM/YY format!"
+    ),
+})
+
 export type CartStoreStateType = {
   cart: CartsItemType;
   hasHydreted: boolean;
