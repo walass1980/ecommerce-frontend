@@ -16,6 +16,23 @@ const UseCartStore = create<CartStoreStateType & CartStoreActionsType>()(
                         p.selectedSize === product.selectedSize &&
                         p.selectedColor === product.selectedColor
                     )
+
+                    if (existingIndex !== -1) {
+                        const updateedCart = [...state.cart]
+                        updateedCart[existingIndex].quantity += product.quantity
+                        return { cart: updateedCart }
+                    }
+
+                    return {
+                        cart: {
+                            ...state.cart,
+                            {
+                                ...product,
+                                quantity: product.quantity || 1,
+                                
+                            }
+                        }
+                    }
                 })
         })
     )
