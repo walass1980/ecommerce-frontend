@@ -255,9 +255,12 @@ const getData = async (): Promise<User[]> => {
   ];
 };
 
-const UsersPage = () => {
+const UsersPage = async() => {
+  const data = await getData()
   return (
-    <div className=''>UsersPage</div>
+    <div className=''>
+      <h1 className="font-semibold">All Users</h1>
+    </div>
   )
 }
 
